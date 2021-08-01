@@ -1,3 +1,17 @@
 const Sistema = require('./ex2')
-const {toBeDeepCloseTo} = require('jest-matcher-deep-close-to')
-expect.extend( { toBeDeepCloseTo})
+
+
+ describe('Testes', ()=> {
+
+  
+
+  test('isEven', ()=>{
+ 
+     const num = 4
+
+     expect(Sistema.isEven(num)).toBe(4)
+  })
+
+
+
+ })

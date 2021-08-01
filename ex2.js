@@ -66,7 +66,7 @@ const arr = [-1, 50, 5, 10, -8, 20, 25, 0, 100, 14, -123];
 
  
    console.log(compose)
-
+module.exports = {isEven, isOdd, isPrime}
 
 // ExercÃ­cio 1: use map() para transformar 'arr' em objetos usando mapToNumberObject()
 
