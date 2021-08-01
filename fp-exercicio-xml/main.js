@@ -1,6 +1,6 @@
 const fs = require('fs');
-const { DOMParser } = require('xmldom');
-const R = require('ramda');
+const { DOMParser } = require('xmldom')
+const R = require('ramda')
 
 const { isValid, elementsToArray, getGitHubProject } = require('./xmlfilter');
 
