@@ -4,21 +4,21 @@ const contentOfTag = R.curry(
     (xmlNode, tagName) => xmlNode.getElementsByTagName(tagName)[0].textContent
 );
 
-const contentOfSource = contentOfTag(R.__, 'source');
-const contentOfAdded = contentOfTag(R.__, 'added');
-const contentOfUpdated = contentOfTag(R.__, 'lastupdated');
-const contentOfID = contentOfTag(R.__, 'id');
+const contentOfSource = contentOfTag(R.__, 'source'); // Curryng
+const contentOfAdded = contentOfTag(R.__, 'added');  //Curryng
+const contentOfUpdated = contentOfTag(R.__, 'lastupdated');  //Curryng
+const contentOfID = contentOfTag(R.__, 'id');   //Curryng
 const getGitHubProject = xmlNode => contentOfSource(xmlNode).replace('https://github.com/', '');
 
-const elementsToArray = nodes => {
+const elementsToArray = nodes => {   // Declaração de Função
     const arr = [];
     for (let i = 0; i < nodes.length; i++)
-        arr.push(nodes[i]);
+        arr.push(nodes[i]);   // Side Effect
     return arr;
 };
 
-const isValid = R.curry(
-    (app, addedAfterYear, updatedAfterYear) => {
+const isValid = R.curry( // Funcao Curryng
+    (app, addedAfterYear, updatedAfterYear) => {   //DEclaração de Função
         if (!contentOfSource(app).includes('github.com'))
             return false;
 
