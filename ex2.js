@@ -2,20 +2,20 @@ const R = require('ramda');
 
  const isEven = (number) =>  {
     const n = R.clone(number);
-    n.even = n.value % 2 == 0;
-    return n;
+    n.isEven = n.value % 2 == 0;
+    return n
 }
 
  const positive = (number) => {
     const n = R.clone(number);
     n.positive = n.value > 0;
-    return n;
+    return n
 }
 
  const isOdd = (number) => {
     
   const n = R.clone(number); 
-  n.isOdd = n.value !== 0; 
+  n.isOdd = n.value % 2 !== 0; 
   return n;
 
 }
@@ -23,20 +23,31 @@ const R = require('ramda');
 const negative = (number) => {
     const n = R.clone(number); 
     n.negative = n.value < 0; 
-    return n;
+    return n
 }
 
 const isZero = (number) =>  {
     const n = R.clone(number); 
-    n.isZero = n.value == 0; 
+    n.isZero = n.value === 0; 
     return n;
 }
 
 const isPrime = (number) => {
     const n = R.clone(number); 
-    n.isPrime = n.value % 2 !== 0; 
+   n.isPrime = ValidPrime(number)
+   
     return n;
 }
+
+const ValidPrime = (num) => {
+    for (let i = 2; i < num; i++)
+      if (num % i === 0) {
+        return false;
+      }
+    return num > 1;
+  };
+
+
 
 const mapToNumberObject = num => {
     return { value: num };
@@ -48,7 +59,6 @@ const arr = [-1, 50, 5, 10, -8, 20, 25, 0, 100, 14, -123];
   const map = arr.map(mapToNumberObject)
 
 
- 
 
  const compose = R.pipe( 
      
@@ -57,16 +67,14 @@ const arr = [-1, 50, 5, 10, -8, 20, 25, 0, 100, 14, -123];
      negative, 
      positive, 
      isPrime, 
-     isOdd, 
-     mapToNumberObject, 
-  
+     isOdd
      
- )
+ )  
 
-
+  
  
-   console.log(compose)
-module.exports = {isEven, isOdd, isPrime}
+
+module.exports = {isEven, isOdd, isPrime,isZero, positive, negative, compose, mapToNumberObject}
 
 // ExercÃ­cio 1: use map() para transformar 'arr' em objetos usando mapToNumberObject()
 
