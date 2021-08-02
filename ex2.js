@@ -32,12 +32,16 @@
         return n;
     }
 
+
+
     const isPrime = (number) => {
         const n = R.clone(number); 
     n.isPrime = ValidPrime(number)
     
         return n;
     }
+
+    
 
     const ValidPrime = (num) => {
         for (let i = 2; i < num; i++)
@@ -53,12 +57,6 @@
         return { value: num };
     }
 
-    const arr = [-1, 50, 5, 10, -8, 20, 25, 0, 100, 14, -123]; 
-
-
-    const map = arr.map(mapToNumberObject)
-
-
 
     const compose = R.pipe( 
         
@@ -73,8 +71,8 @@
 
     
     
-
-    module.exports = {isEven, isOdd, isPrime,isZero, positive, negative, compose, mapToNumberObject}
+    module.exports = {isEven, isOdd, isPrime,isZero, positive, negative, compose, mapToNumberObject,
+    ValidPrime}
 
     // ExercÃ­cio 1: use map() para transformar 'arr' em objetos usando mapToNumberObject()
 

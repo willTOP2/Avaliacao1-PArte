@@ -1,6 +1,5 @@
 
-
-  const Sistema = require('./ex2')
+const Sistema = require('./ex2')
 
 
   describe('Testes', ()=> {
@@ -58,6 +57,14 @@
         )
       
     })
-  
+   
+    test('Teste validacao se não é numero primo', ()=>{
 
+         expect(Sistema.ValidPrime(8)).toBe(false)
+    })
+    test('Teste validação se e numero primo', ()=>{
+
+      expect(Sistema.ValidPrime(11)).toBe(true)
+ })
+  
   })
